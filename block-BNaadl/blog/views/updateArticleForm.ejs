@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/createArticleForm.css" />
+    <title>Article Form</title>
+  </head>
+  <body>
+    <div class="article-form">
+      <h2>Update the Article</h2>
+      <form action="/articles/<%=article.id%>" method="POST" id="articleForm">
+        <label for="title">Title:</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          required
+          value="<%=article.title%>"
+        />
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required>
+<%=article.description%></textarea
+        >
+
+        <label for="tags">Tags (comma-separated):</label>
+        <input
+          type="text"
+          id="tags"
+          name="tags"
+          required
+          value="<%=article.tags%>"
+        />
+
+        <label for="author">Author:</label>
+        <input
+          type="text"
+          id="author"
+          name="author"
+          required
+          value="<%=article.author%>"
+        />
+
+        <label for="likes">Likes:</label>
+        <input
+          type="number"
+          id="likes"
+          name="likes"
+          value="<%=article.likes%>"
+          required
+        />
+
+        <button type="submit">Update</button>
+      </form>
+    </div>
+  </body>
+</html>

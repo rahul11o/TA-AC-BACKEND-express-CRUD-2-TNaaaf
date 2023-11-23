@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.article {
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.article-title {
+  color: #333;
+}
+
+.article-description {
+  color: #555;
+}
+
+.article-tags {
+  color: #777;
+}
+
+.article-tags span {
+  font-weight: bold;
+}
+
+.article-author {
+  color: #555;
+}
+
+.article-likes {
+  color: #333;
+}
+
+.article-likes span {
+  font-weight: bold;
+  color: #ff6347; /* Tomato color for emphasis */
+}
+
+a {
+  display: inline-block;
+  background-color: #333;
+  border-radius: 4px;
+  margin: 0 12px 0 0;
+  padding: 8px 18px;
+  margin-top: 10px;
+  color: #e8ecef;
+  text-decoration: none;
+}
