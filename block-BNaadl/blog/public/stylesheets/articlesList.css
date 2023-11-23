@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  align-items: start;
+}
+.article div {
+  display: inline-block;
+  /* align-items: center; */
+}
+
+.article h2 {
+  color: #333;
+}

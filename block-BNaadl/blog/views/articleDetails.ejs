@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/articleDetails.css" />
+    <title>Article Page</title>
+  </head>
+  <body>
+    <div class="article">
+      <h2 class="article-title"><%=article.title%></h2>
+      <p class="article-description"><%=article.description%></p>
+      <p class="article-tags"><span><%=article.tags%></span></p>
+      <p class="article-author"><%=article.author%></p>
+      <p class="article-likes">
+        Likes: <span id="likeCount"><%=article.likes%></span>
+      </p>
+
+      <!-- Like buttons -->
+      <a href="#">👍</a>
+      <a href="#">👎</a>
+
+      <!-- Edit and Delete buttons -->
+      <a href="/articles/edit/<%=article.id%>">Update Article</a>
+      <a href="/articles/delete/<%=article.id%>">Delete Article</a>
+      <a href="/articles">Back</a>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
