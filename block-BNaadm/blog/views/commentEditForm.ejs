@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/header.css" />
+    <link rel="stylesheet" href="/stylesheets/articleDetails.css" />
+    <link rel="stylesheet" href="/stylesheets/footer.css" />
+  </head>
+  <body>
+    <%- include('partials/header') -%>
+    <div class="comment-section">
+      <form class="center" action="/comments/<%=comment.id%>" method="post">
+        <textarea name="content" placeholder="Add your comment here">
+            <%=comment.content%></textarea
+        >
+        <button type="submit">Add Comment</button>
+      </form>
+    </div>
+    <%- include('partials/footer') -%>
+  </body>
+</html>

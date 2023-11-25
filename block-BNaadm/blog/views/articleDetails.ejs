@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/stylesheets/header.css" />
+    <link rel="stylesheet" href="/stylesheets/articleDetails.css" />
+    <link rel="stylesheet" href="/stylesheets/footer.css" />
+    <title>Article Page</title>
+  </head>
+  <body>
+    <%- include('partials/header') -%>
+    <div class="article-section">
+      <div class="article">
+        <h2 class="article-title"><%=article.title%></h2>
+        <p class="article-description"><%=article.description%></p>
+        <p class="article-tags"><span><%=article.tags%></span></p>
+        <p class="article-author"><%=article.author%></p>
+        <p class="article-likes">
+          Likes: <span id="likeCount"><%=article.likes%></span>
+        </p>
+
+        <!-- Like buttons -->
+        <a href="/articles/<%=article.id%>/likes">👍</a>
+        <a href="/articles/<%=article.id%>/dislikes">👎</a>
+
+        <!-- Edit and Delete buttons -->
+        <a href="/articles/<%=article.id%>/edit">Update Article</a>
+        <a href="/articles/<%=article.id%>/delete">Delete Article</a>
+        <a href="/articles">Back</a>
+      </div>
+    </div>
+    <div class="comment-section">
+      <h3>Comments</h3>
+
+      <!-- Comment Form (for adding new comments) -->
+      <form action="/articles/<%=article.id%>/comments" method="post">
+        <textarea name="content" placeholder="Add your comment here"></textarea>
+        <button type="submit">Add Comment</button>
+      </form>
+      <!-- Existing Comments (if any) -->
+      <% article.comments.forEach(comment => { %>
+      <div class="comment">
+        <p><%= comment.content %></p>
+
+        <!-- Buttons for Comment Actions -->
+        <a href="/comments/<%=comment._id%>/edit">Update</a>
+        <a href="/comments/<%=comment._id%>/delete">Delete</a>
+        <a href="/comments/<%=comment._id%>/likes"
+          >👍 <span class="like"><%= comment.likes %> </span>
+        </a>
+        <a href="/comments/<%=comment._id%>/dislikes"
+          >👎 <span class="dislikes"><%= comment.dislikes %></span>
+        </a>
+      </div>
+      <% }); %>
+    </div>
+    <%- include('partials/footer') -%>
+  </body>
+</html>
