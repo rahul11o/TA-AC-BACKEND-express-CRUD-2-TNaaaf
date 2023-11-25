@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.article {
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  align-items: start;
+}
+.article h2 a {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 12px;
+  text-transform: capitalize;
+  color: #090909;
+  font-size: 24px;
+  padding: 4px 16px;
+  background-color: #f8f6f6;
+  border-radius: 8px;
+}
+.message {
+  text-align: center;
+}
+
+.article h2 {
+  color: #333;
+}
