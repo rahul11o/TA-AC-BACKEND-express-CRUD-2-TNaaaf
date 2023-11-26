@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Page</title>
+    <link rel="stylesheet" href="/stylesheets/header.css" />
+    <link rel="stylesheet" href="/stylesheets/books.css" />
+  </head>
+  <body>
+    <%- include('partials/header') -%>
+    <div class="btn-container">
+      <form action="/books/bookname" method="POST">
+        <input type="text" id="title" name="bookname" required />
+        <div class="buttons">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+      <form action="/books/authorname" method="POST">
+        <input type="text" id="title" name="authorname" required />
+        <div class="buttons">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+      <form action="books/category" method="POST">
+        <select id="category" name="category" required multiple>
+          <option value="fiction">Fiction</option>
+          <option value="adventure">Adventure</option>
+          <option value="technology">Technology</option>
+          <option value="motivation">Motivation</option>
+        </select>
+        <div class="buttons">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+
+    <div class="card-container">
+      <% book.forEach((elem)=>{ %>
+      <div class="card">
+        <img src="<%=elem.cover_image%>" alt="Book Cover 1" />
+        <h2><%=elem.title.toUpperCase()%></h2>
+        <p>Summary :<%=elem.summary%></p>
+        <p>Pages: <%=elem.pages%></p>
+        <p>Publication: <%=elem.publication%></p>
+        <p>Category: <%=elem.category%></p>
+        <p>Author Name: <%=elem.author.name%></p>
+        <div class="card-buttons">
+          <a href="#">Delete</a>
+          <a href="#">Update</a>
+          <a href="#">Like</a>
+          <a href="#">Dislike</a>
+        </div>
+      </div>
+      <% })%>
+    </div>
+    <%- include('partials/footer') -%>
+  </body>
+</html>
